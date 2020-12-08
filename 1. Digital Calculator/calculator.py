@@ -95,5 +95,5 @@ class application(Frame):
 
         # Clear Button
         self.ClearButton = Button(self, bg="#98DBC6", bd=12, text='AC',
-        font=("Helvetica", 20, "bold"), width=28, command=self.ClearBoard)
+        font=("Helvetica", 20, "bold"), width=28, padx=7, command=self.ClearBoard)
         self.ClearButton.grid(row=1, columnspan=4, sticky=W)
