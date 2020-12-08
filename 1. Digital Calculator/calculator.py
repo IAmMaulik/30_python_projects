@@ -2,11 +2,22 @@ from tkinter import *
 
 class application(Frame):
     def __init__(self, master):
-        super(self, application).__init__(master)
+        super(application, self).__init__(master)
         self.task = ""
         self.UserIn = StringVar()
         self.grid()
         self.create_widgets()
+
+    def button_click(self, number):
+        self.data = self.user_input.get()
+        try:
+            self.answer = eval(self.data)
+            self.display_text = self.answer
+            self.task = self.answer
+
+        except:
+            self.display_text("Invalid Syntax!")
+            self.task = ""
 
     def create_widgets(self):
         # Defining the Entry
