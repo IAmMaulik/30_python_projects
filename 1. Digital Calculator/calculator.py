@@ -23,6 +23,11 @@ class application(Frame):
         self.user_input.delete(0, END)
         self.user_input.insert(0, value)
 
+    def ClearBoard(self):
+        self.task = ""
+        self.user_input.delete(0, END)
+        self.user_input.insert(0, "0")
+
     def create_widgets(self):
         # Defining the Entry
         self.user_input = Entry(self, bg="#5BC8AC", bd=29,
