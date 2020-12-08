@@ -18,6 +18,10 @@ class application(Frame):
         except:
             self.display_text("Invalid Syntax!")
             self.task = ""
+    
+    def display_text(self, value):
+        self.user_input.delete(0, END)
+        self.user_input.insert(0, value)
 
     def create_widgets(self):
         # Defining the Entry
