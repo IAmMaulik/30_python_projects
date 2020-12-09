@@ -12,7 +12,7 @@
 It is a standard library that comes installed with python
 
 ## Screenshots
-![Example screenshot](./images/screenshot.png)
+![screenshot](./images/screenshot.PNG)
 
 ## Setup
 * No requirements here, just clone the repo and run the code
