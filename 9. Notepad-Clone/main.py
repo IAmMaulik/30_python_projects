@@ -1,14 +1,50 @@
 from tkinter import *
 from tkinter.messagebox import showinfo
+from tkinter.filedialog import askopenfilename
+from tkinter.filedialog import asksaveasfilename
+import os
 
 def newFile():
-    pass
+    global file
+    root.title("Untitled - MS Notepad")
+    file = None
+    TextArea.delete(1.0, END)
 
 def openFile():
-    pass
+    global file
+    file = askopenfilename(defaultextension=".txt", filetypes=[
+        ("All Files", "*.*"), ("Text Documents", "*.txt")])
+
+    if file == "":
+        file = None
+    else:
+        root.title(f"{os.path.basename(file)} - MS Notepad")
+        TextArea.delete(1.0, END)
+        f = open(file, "r")
+
+        TextArea.insert(1.0, f.read())
+        f.close()
 
 def saveFile():
-    pass
+    global file
+    if file == None:
+        file = asksaveasfilename(initialfile = "Untitled.txt", filetypes=[
+        ("All Files", "*.*"), ("Text Documents", "*.txt")])
+
+        if file == "":
+            file = None
+        
+        else:
+            f = open(file, "w")
+            f.write(TextArea.get(1.0, END))
+            f.close()
+
+            root.title(f"{os.path.basename(file)} - MS Notepad")
+            print("File Saved")
+    else:
+        f = open(file, "w")
+        f.write(TextArea.get(1.0, END))
+        f.close()
 
 def quitApp():
     root.destroy()
@@ -29,7 +65,7 @@ def about():
 if __name__ == "__main__":
     root = Tk()
     root.title("Untitled - MS Notepad")
-    root.wm_iconbitmap('icon.ico')
+    root.wm_iconbitmap('./images/icon.ico')
     root.geometry("644x788")
 
     TextArea = Text(root, font=("lucida", 13))
