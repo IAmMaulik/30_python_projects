@@ -10,11 +10,19 @@
 socket is a standard module that comes with python, whereas requests needs to be installed
 
 ## Steps to use this keylogger
-- Type this command in terminal if you have git installed 
-  ```git clone https://github.com/IAmMaulik/IP_Finder.git```
+- Clone the repository in whichever way you prefer
 - Type this command in your terminal
-	```pip install -r requirements.txt```
-- Run the program by writing ```./main.py```
+	```
+	$ pip install -r requirements.txt
+	```
+- Run the program by writing 
+	```
+	$ python main.py
+	```
+- If that doesn't work, try
+	```
+	python3 main.py
+	```
 
 
 ## Point to note
